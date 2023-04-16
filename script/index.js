@@ -9,7 +9,7 @@ const PAGORULETA = 35;
 
 /* -------------------- Definicion de funcion para establecer la cantidad de rondas a jugar --------------------*/
 function definirRondas() {
-  if (cantidadDeRondas < 0) {
+  if (cantidadDeRondas < 0 || isNaN(cantidadDeRondas)) {
     alert(`Por favor ingrese una cantidad de rondas valida`);
   } else if (cantidadDeRondas == 0) {
     alert(`Excelente decision. La ludopatia es una enfemerdad`);
