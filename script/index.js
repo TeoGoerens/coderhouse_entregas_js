@@ -52,13 +52,15 @@ function validarInformacionUsuario(ronda) {
     ) {
       alert(`Ingrese un numero valido entre 0 y 36`);
       numeroApuesta = Number(
-        prompt("Ingrese el numero por el que desea apostar")
+        prompt("Vuelva a ingresar el numero por el que desea apostar")
       );
     }
     montoApuesta = Number(prompt("Ingrese el monto que desea apostar"));
     while (isNaN(montoApuesta) || montoApuesta < 0) {
       alert(`Ingrese un monto valido para realizar la apuesta`);
-      montoApuesta = Number(prompt("Ingrese el monto que desea apostar"));
+      montoApuesta = Number(
+        prompt("Vuelva a ingresar el monto que desea apostar")
+      );
     }
     validacionUsuario = prompt(
       `Esta es la ronda ${ronda}. Usted ha apostado $${montoApuesta} por el numero ${numeroApuesta}. ¿Es correcto? Y/N`
