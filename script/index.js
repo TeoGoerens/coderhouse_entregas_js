@@ -82,12 +82,14 @@ function evaluarApuesta(ronda, numeroApuesta, montoApuesta) {
     gananaciaRonda = PAGORULETA * montoApuesta;
     totalGananciaApuestas += gananaciaRonda;
     alert(
-      `El numero arrojado por la ruleta electronica en la ronda ${ronda} es ${numeroRuleta} y usted ha apostado por el ${numeroApuesta}. Usted ha ganado $${gananaciaRonda} esta ronda y acumula $${totalGananciaApuestas} gracias a ${totalAciertosApuestas} aciertos`
+      `El numero arrojado por la ruleta electronica en la ronda ${ronda} es el ${numeroRuleta} y usted ha apostado por el ${numeroApuesta}. Usted ha ganado $${gananaciaRonda} esta ronda y acumula $${totalGananciaApuestas} con un balance de ${totalAciertosApuestas} aciertos y ${totalDesaciertosApuestas} desaciertos`
     );
   } else {
     totalDesaciertosApuestas += 1;
+    gananaciaRonda = montoApuesta * -1;
+    totalGananciaApuestas += gananaciaRonda;
     alert(
-      `El numero arrojado por la ruleta electronica en la ronda ${ronda} es ${numeroRuleta} y usted ha apostado por el ${numeroApuesta}. Usted no ha ganado y acumula ${totalDesaciertosApuestas} desaciertos`
+      `El numero arrojado por la ruleta electronica en la ronda ${ronda} es el ${numeroRuleta} y usted ha apostado por el ${numeroApuesta}. Usted ha perdido $${gananaciaRonda} esta ronda y acumula ${totalGananciaApuestas} con un balance de ${totalAciertosApuestas} aciertos y ${totalDesaciertosApuestas} desaciertos`
     );
   }
 }
