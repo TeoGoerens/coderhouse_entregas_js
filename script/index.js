@@ -1,6 +1,8 @@
 /* -------------------- Definicion de variables globales --------------------*/
 let cantidadDeRondas = Number(
-  prompt("Ingrese la cantidad de rondas que desea jugar")
+  prompt(
+    "Bienvenido a la ruleta electronica. Ingrese la cantidad de rondas que desea jugar"
+  )
 );
 let totalGananciaApuestas = 0;
 let totalAciertosApuestas = 0;
