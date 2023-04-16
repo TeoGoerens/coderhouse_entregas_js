@@ -18,6 +18,18 @@ function definirRondas() {
   }
 }
 
+/* -------------------- Definicion de funcion para apostar --------------------*/
+function apostarRuleta(cantidadDeRondas) {
+  let ronda = 1;
+  while (ronda <= cantidadDeRondas) {
+    let resultadosValidacion = validarInformacionUsuario(ronda);
+    let numeroApuesta = resultadosValidacion[0];
+    let montoApuesta = resultadosValidacion[1];
+    evaluarApuesta(ronda, numeroApuesta, montoApuesta);
+    ronda++;
+  }
+}
+
 /* -------------------- Definicion de funcion para obtencion del numero de ruleta electronica --------------------*/
 function numeroAleatorioRuleta() {
   return Math.floor(Math.random() * 37);
@@ -73,18 +85,6 @@ function evaluarApuesta(ronda, numeroApuesta, montoApuesta) {
     alert(
       `El numero arrojado por la ruleta electronica en la ronda ${ronda} es ${numeroRuleta}. Usted no ha ganado y acumula ${totalDesaciertosApuestas} desaciertos`
     );
-  }
-}
-
-/* -------------------- Definicion de funcion para apostar --------------------*/
-function apostarRuleta(cantidadDeRondas) {
-  let ronda = 1;
-  while (ronda <= cantidadDeRondas) {
-    let resultadosValidacion = validarInformacionUsuario(ronda);
-    let numeroApuesta = resultadosValidacion[0];
-    let montoApuesta = resultadosValidacion[1];
-    evaluarApuesta(ronda, numeroApuesta, montoApuesta);
-    ronda++;
   }
 }
 
