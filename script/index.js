@@ -34,8 +34,7 @@ function apostarRuleta(cantidadDeRondas) {
 
 /* -------------------- Definicion de funcion para obtencion del numero de ruleta electronica --------------------*/
 function numeroAleatorioRuleta() {
-  /* return Math.floor(Math.random() * 37); */
-  return Math.floor(23);
+  return Math.floor(Math.random() * 37);
 }
 
 /* -------------------- Definicion de funcion para validar la informacion ingresada por el usuario en cada ronda --------------------*/
