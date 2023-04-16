@@ -25,8 +25,8 @@ function apostarRuleta(cantidadDeRondas) {
   let ronda = 1;
   while (ronda <= cantidadDeRondas) {
     let resultadosValidacion = validarInformacionUsuario(ronda);
-    let numeroApuesta = resultadosValidacion[0];
-    let montoApuesta = resultadosValidacion[1];
+    let numeroApuesta = resultadosValidacion[1];
+    let montoApuesta = resultadosValidacion[0];
     evaluarApuesta(ronda, numeroApuesta, montoApuesta);
     ronda++;
   }
@@ -34,7 +34,8 @@ function apostarRuleta(cantidadDeRondas) {
 
 /* -------------------- Definicion de funcion para obtencion del numero de ruleta electronica --------------------*/
 function numeroAleatorioRuleta() {
-  return Math.floor(Math.random() * 37);
+  /* return Math.floor(Math.random() * 37); */
+  return Math.floor(23);
 }
 
 /* -------------------- Definicion de funcion para validar la informacion ingresada por el usuario en cada ronda --------------------*/
@@ -82,12 +83,12 @@ function evaluarApuesta(ronda, numeroApuesta, montoApuesta) {
     gananaciaRonda = PAGORULETA * montoApuesta;
     totalGananciaApuestas += gananaciaRonda;
     alert(
-      `El numero arrojado por la ruleta electronica en la ronda ${ronda} es ${numeroRuleta}. Usted ha ganado $${gananaciaRonda} esta ronda y acumula ${totalGananciaApuestas} gracias a ${totalAciertosApuestas} aciertos`
+      `El numero arrojado por la ruleta electronica en la ronda ${ronda} es ${numeroRuleta} y usted ha apostado por el ${numeroApuesta}. Usted ha ganado $${gananaciaRonda} esta ronda y acumula $${totalGananciaApuestas} gracias a ${totalAciertosApuestas} aciertos`
     );
   } else {
     totalDesaciertosApuestas += 1;
     alert(
-      `El numero arrojado por la ruleta electronica en la ronda ${ronda} es ${numeroRuleta}. Usted no ha ganado y acumula ${totalDesaciertosApuestas} desaciertos`
+      `El numero arrojado por la ruleta electronica en la ronda ${ronda} es ${numeroRuleta} y usted ha apostado por el ${numeroApuesta}. Usted no ha ganado y acumula ${totalDesaciertosApuestas} desaciertos`
     );
   }
 }
