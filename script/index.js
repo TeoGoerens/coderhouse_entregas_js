@@ -68,9 +68,7 @@ function validarInformacionUsuario(ronda) {
       `Esta es la ronda ${ronda}. Usted ha apostado $${montoApuesta} por el numero ${numeroApuesta}. ¿Es correcto? Y/N`
     );
   }
-  alert(
-    `Esta es la ronda ${ronda} y usted apostara $${montoApuesta} por el numero ${numeroApuesta}`
-  );
+  alert(`Apuesta tomada... ¡NO VA MAS!`);
   return [montoApuesta, numeroApuesta];
 }
 /* -------------------- Definicion de funcion para cotejar el numero obtenido en la ruleta con la apuesta realizada por el usuario --------------------*/
